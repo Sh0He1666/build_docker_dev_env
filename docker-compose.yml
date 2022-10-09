@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  app:
+    image: gotodo
+    build:
+      args:
+        - target=dev ## ここ変えても docker compose build --no-cache の挙動変わらないけど、、
+    volumes:
+      - .:/app
+    ports:
+      - "18000:80"
+
+
